@@ -1,0 +1,198 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+@theme inline {
+	--font-heading: var(--font-sans);
+	--font-sans: "Geist Variable", sans-serif;
+	--color-sidebar-ring: var(--sidebar-ring);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar: var(--sidebar);
+	--color-chart-5: var(--chart-5);
+	--color-chart-4: var(--chart-4);
+	--color-chart-3: var(--chart-3);
+	--color-chart-2: var(--chart-2);
+	--color-chart-1: var(--chart-1);
+	--color-ring: var(--ring);
+	--color-input: var(--input);
+	--color-border: var(--border);
+	--color-destructive: var(--destructive);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-accent: var(--accent);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-muted: var(--muted);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-secondary: var(--secondary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-primary: var(--primary);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-popover: var(--popover);
+	--color-card-foreground: var(--card-foreground);
+	--color-card: var(--card);
+	--color-foreground: var(--foreground);
+	--color-background: var(--background);
+	--radius-sm: calc(var(--radius) * 0.6);
+	--radius-md: calc(var(--radius) * 0.8);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) * 1.4);
+	--radius-2xl: calc(var(--radius) * 1.8);
+	--radius-3xl: calc(var(--radius) * 2.2);
+	--radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.145 0 0);
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.145 0 0);
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.145 0 0);
+	--primary: oklch(0.205 0 0);
+	--primary-foreground: oklch(0.985 0 0);
+	--secondary: oklch(0.97 0 0);
+	--secondary-foreground: oklch(0.205 0 0);
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.556 0 0);
+	--accent: oklch(0.97 0 0);
+	--accent-foreground: oklch(0.205 0 0);
+	--destructive: oklch(0.577 0.245 27.325);
+	--border: oklch(0.922 0 0);
+	--input: oklch(0.922 0 0);
+	--ring: oklch(0.708 0 0);
+	--chart-1: oklch(0.87 0 0);
+	--chart-2: oklch(0.556 0 0);
+	--chart-3: oklch(0.439 0 0);
+	--chart-4: oklch(0.371 0 0);
+	--chart-5: oklch(0.269 0 0);
+	--radius: 0.625rem;
+	--sidebar: oklch(0.985 0 0);
+	--sidebar-foreground: oklch(0.145 0 0);
+	--sidebar-primary: oklch(0.205 0 0);
+	--sidebar-primary-foreground: oklch(0.985 0 0);
+	--sidebar-accent: oklch(0.97 0 0);
+	--sidebar-accent-foreground: oklch(0.205 0 0);
+	--sidebar-border: oklch(0.922 0 0);
+	--sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+	--background: oklch(0.145 0 0);
+	--foreground: oklch(0.985 0 0);
+	--card: oklch(0.205 0 0);
+	--card-foreground: oklch(0.985 0 0);
+	--popover: oklch(0.205 0 0);
+	--popover-foreground: oklch(0.985 0 0);
+	--primary: oklch(0.922 0 0);
+	--primary-foreground: oklch(0.205 0 0);
+	--secondary: oklch(0.269 0 0);
+	--secondary-foreground: oklch(0.985 0 0);
+	--muted: oklch(0.269 0 0);
+	--muted-foreground: oklch(0.708 0 0);
+	--accent: oklch(0.269 0 0);
+	--accent-foreground: oklch(0.985 0 0);
+	--destructive: oklch(0.704 0.191 22.216);
+	--border: oklch(1 0 0 / 10%);
+	--input: oklch(1 0 0 / 15%);
+	--ring: oklch(0.556 0 0);
+	--chart-1: oklch(0.87 0 0);
+	--chart-2: oklch(0.556 0 0);
+	--chart-3: oklch(0.439 0 0);
+	--chart-4: oklch(0.371 0 0);
+	--chart-5: oklch(0.269 0 0);
+	--sidebar: oklch(0.205 0 0);
+	--sidebar-foreground: oklch(0.985 0 0);
+	--sidebar-primary: oklch(0.488 0.243 264.376);
+	--sidebar-primary-foreground: oklch(0.985 0 0);
+	--sidebar-accent: oklch(0.269 0 0);
+	--sidebar-accent-foreground: oklch(0.985 0 0);
+	--sidebar-border: oklch(1 0 0 / 10%);
+	--sidebar-ring: oklch(0.556 0 0);
+}
+
+@theme {
+	--font-sans: "Noto Sans KR Variable", system-ui, sans-serif;
+	--font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+	--font-serif: "Noto Serif KR Variable", serif;
+	--border-width-fluid: clamp(1px, 0.04rem + 0.11vw, 2px);
+
+	/*
+      rem 계산식 (1rem = 16px, 320px에서 11px → 1200px에서 13px)
+      - 최소값: 11 / 16 = 0.6875rem
+      - 최대값: 13 / 16 = 0.8125rem
+      - 기울기: (13 - 11) / (1200 - 320) = 0.002273 → ×100 = 약 0.22vw
+      - 절편: 11 - 0.002273 × 320 ≈ 10.27px → 10.27 / 16 ≈ 0.64rem (0.635rem으로 반올림)
+      - 선호값: 0.635rem + 0.22vw
+    */
+	--text-fluid-xs: clamp(0.6875rem, 0.635rem + 0.22vw, 0.8125rem);
+	--text-fluid-xs--line-height: 1.5;
+
+	/* 언어 포인트 컬러. Rust는 공식 색이 없어 rust-lang.org에서 쓰던 주황을 쓴다. */
+	--color-kotlin: rgb(127 82 255);
+	--color-rust: rgb(206 66 43);
+	--color-typescript: rgb(49 120 198);
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+	html {
+		@apply font-sans;
+	}
+
+	/* 클릭해서 활성화되는 컨트롤에는 손가락 커서를 쓴다. Tailwind v4는 기본값을 주지 않는다. */
+	button:not(:disabled),
+	select:not(:disabled),
+	summary,
+	[role="button"]:not([aria-disabled="true"]),
+	[role="radio"]:not([aria-disabled="true"]),
+	[role="checkbox"]:not([aria-disabled="true"]),
+	[role="switch"]:not([aria-disabled="true"]),
+	[role="tab"]:not([aria-disabled="true"]) {
+		cursor: pointer;
+	}
+
+	/* 내부 링크는 기본 손가락 커서를 쓴다. */
+	a[href]:not([rel~="external"]) {
+		cursor: pointer;
+	}
+
+	/* 외부 링크는 링크 배지를 붙여 이동 대상을 구분한다. */
+	a[rel~="external"] {
+		cursor:
+			url("/cursors/link.png") 10 1,
+			pointer;
+	}
+
+	/* 비활성 컨트롤은 클릭할 수 없음을 알린다. */
+	button:disabled,
+	select:disabled,
+	[aria-disabled="true"] {
+		cursor: not-allowed;
+	}
+}
