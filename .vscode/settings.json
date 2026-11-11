@@ -29,6 +29,7 @@
 	"[css]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
+	"editor.linkedEditing": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.biome": "explicit",
 		"source.organizeImports.biome": "explicit"
@@ -36,6 +37,7 @@
 	"js/ts.preferences.autoImportFileExcludePatterns": [
 		"**/node_modules/@base-ui/**"
 	],
+	"js/ts.preferences.includePackageJsonAutoImports": "on",
 	"css.lint.unknownAtRules": "ignore",
 	"tailwindCSS.classFunctions": ["cn", "cva", "clsx"]
 }
