@@ -1,9 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/noto-sans-kr";
 @import "@fontsource-variable/noto-serif-kr";
 @import "@fontsource-variable/jetbrains-mono";
+@import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
+
+@plugin "fluid-tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -130,21 +132,10 @@ body {
 }
 
 @theme {
-	--font-sans: "Noto Sans KR Variable", system-ui, sans-serif;
+	--font-sans: "Pretendard Variable", Pretendard, system-ui, sans-serif;
 	--font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 	--font-serif: "Noto Serif KR Variable", serif;
 	--border-width-fluid: clamp(1px, 0.04rem + 0.11vw, 2px);
-
-	/*
-      rem 계산식 (1rem = 16px, 320px에서 11px → 1200px에서 13px)
-      - 최소값: 11 / 16 = 0.6875rem
-      - 최대값: 13 / 16 = 0.8125rem
-      - 기울기: (13 - 11) / (1200 - 320) = 0.002273 → ×100 = 약 0.22vw
-      - 절편: 11 - 0.002273 × 320 ≈ 10.27px → 10.27 / 16 ≈ 0.64rem (0.635rem으로 반올림)
-      - 선호값: 0.635rem + 0.22vw
-    */
-	--text-fluid-xs: clamp(0.6875rem, 0.635rem + 0.22vw, 0.8125rem);
-	--text-fluid-xs--line-height: 1.5;
 
 	/* 언어 포인트 컬러. Rust는 공식 색이 없어 rust-lang.org에서 쓰던 주황을 쓴다. */
 	--color-kotlin: rgb(127 82 255);
